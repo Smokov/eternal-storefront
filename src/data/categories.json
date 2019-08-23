@@ -1,0 +1,44 @@
+[
+  { "id": 1, "parent_id": null, "path": "/charms", "name": "Berloques" },
+  { "id": 2, "parent_id": null, "path": "/bracelets", "name": "Braceletes" },
+  { "id": 3, "parent_id": null, "path": "/rings", "name": "Anéis" },
+  { "id": 4, "parent_id": null, "path": "/necklaces", "name": "Colares" },
+  { "id": 5, "parent_id": null, "path": "/earing", "name": "Brincos" },
+  { "id": 6, "parent_id": 1, "path": "/charms", "name": "Tema" },
+  { "id": 8, "parent_id": 1, "path": "/charms", "name": "Tipo" },
+  { "id": 9, "parent_id": 1, "path": "/charms", "name": "Material" },
+  {
+    "id": 10,
+    "parent_id": 6,
+    "path": "/amor-familia",
+    "name": "Amor & Familia"
+  },
+  { "id": 11, "parent_id": 6, "path": "/animais", "name": "Animais" },
+  { "id": 12, "parent_id": 6, "path": "/amigos", "name": "Amigos" },
+  {
+    "id": 13,
+    "parent_id": 9,
+    "path": "charms-prata",
+    "name": "Prata"
+  },
+  { "id": 14, "parent_id": 9, "path": "charms-rose", "name": "Rose" },
+  {
+    "id": 15,
+    "parent_id": 9,
+    "path": "charms-murano",
+    "name": "Murano"
+  },
+  {
+    "id": 16,
+    "parent_id": 9,
+    "path": "charms-esmaltado",
+    "name": "Esmaltado"
+  },
+  {
+    "id": 17,
+    "parent_id": 8,
+    "path": "separadores",
+    "name": "Separadores"
+  },
+  { "id": 18, "parent_id": 8, "path": "clips", "name": "Clips" }
+]

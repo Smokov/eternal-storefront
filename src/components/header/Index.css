@@ -24,7 +24,7 @@ header {
   position: relative;
   display: inline-flex;
   cursor: pointer;
-  margin: 0 1.5rem 0 1.5rem;
+  margin: 0 0.75rem 0 0.75rem;
 }
 
 .cart-count {
@@ -40,6 +40,13 @@ header {
   font-weight: 600;
   border-radius: 100%;
   text-align: center;
+}
+
+.account-button {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  margin: 0 0.75rem 0 0.75rem;
 }
 
 .header-container {
@@ -74,9 +81,9 @@ header {
     max-height: 3.25rem;
   }
 
-  .cart-button {
+  /* .cart-button {
     margin: 0 1.2rem;
-  }
+  } */
 
   .header-container {
     align-items: center;
@@ -144,6 +151,14 @@ DESKTOP
 
 .primary-nav .nav-level-3 {
   padding: 0.25rem 0.75rem 0.75rem 0.75rem;
+}
+
+.primary-nav a {
+  color: #000;
+}
+
+.primary-nav a:hover {
+  color: #333;
 }
 
 .primary-nav a.is-active {

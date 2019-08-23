@@ -5,11 +5,12 @@ import Search from "./SearchBox";
 import HeadMenu from "./menu/HeadMenu";
 import Cart from "./cart/Cart";
 import CartIndicator from "./cart/CartIndicator";
-import "./Index.css";
+import { ProfileIcon } from "./profile/Profile";
+import "./index.css";
 
 const Logo = () => (
-  <Link to="/" className="brand-logo">
-    <img src={logo} height={60} style={{ padding: 5 }} alt="logo" />
+  <Link to="/" className="logo-image">
+    <img src={logo} alt="logo" />
   </Link>
 );
 
@@ -29,6 +30,11 @@ export default class Index extends Component {
       mobileMenuIsActive: false
     });
     document.body.classList.toggle("noscroll");
+  };
+
+  showAccountMenu = () => {
+    if (this.state.user) {
+    }
   };
 
   render() {
@@ -53,6 +59,7 @@ export default class Index extends Component {
                   onClick={this.cartToggle}
                   cartIsActive={this.state.cartIsActive}
                 />
+                <ProfileIcon onClick={this.showAccountMenu} />
                 <div
                   className={this.state.cartIsActive ? "mini-cart-open" : ""}
                 >

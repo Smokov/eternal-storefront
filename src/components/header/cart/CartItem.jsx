@@ -28,12 +28,12 @@ const CartItem = ({ item, deleteCartItem }) => {
         <div className="mini-cart-item-price">
           {formatPrice(item.price_total)}
         </div>
-        <a
+        <div
           className="button is-light is-small"
           onClick={() => deleteCartItem(item.id)}
         >
           {"Remover"}
-        </a>
+        </div>
       </div>
     </div>
   );

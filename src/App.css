@@ -2,3 +2,8 @@ body {
   margin-top: 3.25rem;
   transition: margin 200ms ease-in-out;
 }
+a,
+input,
+button {
+  outline: none;
+}
