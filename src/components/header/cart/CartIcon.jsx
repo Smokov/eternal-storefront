@@ -1,6 +1,6 @@
 import React from "react";
-import bag from "../../../images/shopping-bag.svg";
-import close from "../../../images/close.svg";
+import bag from "../../../assets/images/shopping-bag.svg";
+import close from "../../../assets/images/close.svg";
 
 const CartCount = ({ cart }) => {
   if (cart && cart.items && cart.items.length > 0) {
@@ -10,7 +10,7 @@ const CartCount = ({ cart }) => {
   return null;
 };
 
-const CartIcon = ({ cartIsActive }) => {
+const CartImage = ({ cartIsActive }) => {
   if (cartIsActive) {
     return (
       <img
@@ -33,12 +33,12 @@ const CartIcon = ({ cartIsActive }) => {
   );
 };
 
-export default class CartIndicator extends React.PureComponent {
+export default class CartIcon extends React.PureComponent {
   render() {
     const { cart, onClick, cartIsActive } = this.props;
     return (
       <span className="cart-button" onClick={onClick}>
-        <CartIcon cartIsActive={cartIsActive} />
+        <CartImage cartIsActive={cartIsActive} />
         <CartCount cart={cart} />
       </span>
     );

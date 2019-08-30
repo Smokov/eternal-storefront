@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+@import "~bulma";
+
+.dark-overflow {
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 3.25rem;
+  left: 0;
+  height: 100%;
+  z-index: 1001;
+  width: 100%;
+}
+
+body {
+  margin-top: 3.25rem;
+  transition: margin 200ms ease-in-out;
+}
+
+a,
+input,
+button {
+  outline: none;
+}
+
+/*
+MOBILE
+*/
+@media screen and (max-width: 769px) {
+  body.search-active {
+    margin-top: 6.25rem;
+  }
+
+  body.noscroll {
+    position: fixed;
+    overflow: hidden;
+  }
+}
+
+// Import only what you need from Bulma
+/*
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/button.sass";
+@import "../node_modules/bulma/sass/elements/container.sass";
+@import "../node_modules/bulma/sass/elements/form.sass";
+@import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/components/navbar.sass";
+@import "../node_modules/bulma/sass/layout/hero.sass";
+@import "../node_modules/bulma/sass/layout/section.sass";
+*/

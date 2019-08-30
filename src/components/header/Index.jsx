@@ -1,20 +1,21 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../images/eternal-logo.png";
-import Search from "./SearchBox";
+import logo from "../../assets/images/eternal-logo.png";
+import SearchBox from "./SearchBox";
 import HeadMenu from "./menu/HeadMenu";
 import Cart from "./cart/Cart";
-import CartIndicator from "./cart/CartIndicator";
-import { ProfileIcon } from "./profile/Profile";
-import "./index.css";
+import LoginDrawer from "../login/";
+import CartIcon from "./cart/CartIcon";
+import AccountIcon from "./profile/AccountIcon";
+import WishlistIcon from "./wishlist/WishlistIcon";
 
-const Logo = () => (
-  <Link to="/" className="logo-image">
+const Logo = props => (
+  <Link to="/" className="logo-image" onClick={props.onClick}>
     <img src={logo} alt="logo" />
   </Link>
 );
 
-export default class Index extends Component {
+export default class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,6 +25,26 @@ export default class Index extends Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.cart !== nextProps.cart) {
+      this.showCart();
+    }
+  }
+
+  menuClose = () => {
+    this.setState({ mobileMenuIsActive: false });
+    document.body.classList.remove("noscroll");
+  };
+
+  closeAll = () => {
+    this.setState({
+      cartIsActive: false,
+      mobileMenuIsActive: false,
+      loginIsActive: false
+    });
+    document.body.classList.remove("noscroll");
+  };
+
   cartToggle = () => {
     this.setState({
       cartIsActive: !this.state.cartIsActive,
@@ -32,9 +53,24 @@ export default class Index extends Component {
     document.body.classList.toggle("noscroll");
   };
 
-  showAccountMenu = () => {
-    if (this.state.user) {
-    }
+  showCart = () => {
+    this.setState({
+      cartIsActive: true,
+      mobileMenuIsActive: false
+    });
+    document.body.classList.add("noscroll");
+  };
+
+  showLogin = () => {
+    this.setState({
+      loginIsActive: true
+    });
+  };
+
+  onLoginClose = () => {
+    this.setState({
+      loginIsActive: false
+    });
   };
 
   render() {
@@ -49,17 +85,21 @@ export default class Index extends Component {
               <div className="column is-4" />
 
               <div className="column is-4 has-text-centered">
-                <Logo />
+                <Logo onClick={this.closeAll} />
               </div>
               <div className="column is-4 has-text-right header-block-right">
-                <Search />
+                <SearchBox />
 
-                <CartIndicator
+                <CartIcon
                   cart={cart}
-                  onClick={this.cartToggle}
                   cartIsActive={this.state.cartIsActive}
+                  onClick={this.cartToggle}
                 />
-                <ProfileIcon onClick={this.showAccountMenu} />
+
+                <WishlistIcon />
+
+                <AccountIcon onClick={this.showLogin} />
+
                 <div
                   className={this.state.cartIsActive ? "mini-cart-open" : ""}
                 >
@@ -69,6 +109,14 @@ export default class Index extends Component {
                     cartToggle={this.cartToggle}
                   />
                 </div>
+
+                <LoginDrawer
+                  visible={this.state.loginIsActive}
+                  onClose={this.onLoginClose}
+                  zIndex={1005}
+                  width={340}
+                  bodyStyle={{ padding: 0 }}
+                />
               </div>
             </div>
 

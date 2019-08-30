@@ -1,6 +1,6 @@
 import React from "react";
-import search from "../../images/search.svg";
-import close from "../../images/close.svg";
+import search from "../../assets/images/search.svg";
+import close from "../../assets/images/close.svg";
 
 export default class SearchBox extends React.Component {
   constructor(props) {

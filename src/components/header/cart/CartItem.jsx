@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { formatPrice } from "../../../lib/formatting";
-import placeholder from "../../../images/thumbnail-placeholder.png";
+import placeholder from "../../../assets/images/thumbnail-placeholder.png";
 
 const CartItem = ({ item, deleteCartItem }) => {
   //const thumbnail = getThumbnailUrl(item.image_url, 50);
@@ -19,7 +19,7 @@ const CartItem = ({ item, deleteCartItem }) => {
         <div>
           <NavLink to={item.path}>{item.name}</NavLink>
         </div>
-        {item.variant_name.length > 0 && (
+        {item.variant_name && item.variant_name.length > 0 && (
           <div className="cart-option-name">{item.variant_name}</div>
         )}
         <div className="cart-quantity">{`Qtd: ${item.quantity}`}</div>

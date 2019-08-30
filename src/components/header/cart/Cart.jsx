@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import CartItem from "./CartItem";
 import { formatPrice } from "../../../lib/formatting";
-import "./Cart.css";
 
 export default class Cart extends React.PureComponent {
   render() {
