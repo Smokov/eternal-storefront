@@ -37,6 +37,11 @@ MOBILE
   }
 }
 
+@import "cart.scss";
+@import "header.scss";
+@import "login.scss";
+@import "profile.scss";
+
 // Import only what you need from Bulma
 /*
 @import "../node_modules/bulma/sass/utilities/_all.sass";

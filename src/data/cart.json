@@ -1,0 +1,19 @@
+{
+  "subtotal": 900,
+  "items": [
+    {
+      "id": 1,
+      "name": "borboleta shine",
+      "path": "borboleta-shine",
+      "quantity": 9,
+      "price_total": 90
+    },
+    {
+      "id": 2,
+      "name": "snowflake",
+      "path": "charm-snowflake",
+      "quantity": 1,
+      "price_total": 90
+    }
+  ]
+}
