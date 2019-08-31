@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Checkbox, Icon } from "antd";
-import { GoogleLoginButton, FacebookLoginButton } from "./social";
+import { Checkbox } from "antd";
+import {
+  GoogleLoginButton,
+  FacebookLoginButton,
+  TwitterLoginButton
+} from "./social";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "antd/lib/checkbox/style/css";
 import "antd/lib/icon/style/css";
@@ -24,11 +28,11 @@ export default class LoginForm extends Component {
 
   onFormSubmit = event => {
     event.preventDefault();
-    event.stopPropagation();
     // call eternal-authentication service API
   };
 
   onSocialLogin = event => {
+    event.preventDefault();
     // check type (FB or Google ...)
     // call eternal-authentication service API
   };
@@ -56,7 +60,11 @@ export default class LoginForm extends Component {
             />
           </p>
           <p className={"login-button-wrap"}>
-            <button type="submit" className="login-button button is-primary">
+            <button
+              type="submit"
+              className="login-button button is-primary"
+              onClick={this.onFormSubmit}
+            >
               Entrar
             </button>
           </p>
@@ -68,8 +76,15 @@ export default class LoginForm extends Component {
             >
               Lembrar-me
             </Checkbox>
-            <Link className={"lost-password"} to={"account/lost-password"}>
-              <Icon icon="lock" style={{ fontSize: "3rem" }} />
+            <Link
+              className={"lost-password is-inline-block"}
+              to={"/account/lost-password"}
+            >
+              <FontAwesomeIcon
+                icon="lock"
+                className="icon"
+                style={{ fontSize: "1.5rem", paddingRight: "8px" }}
+              />
               Esqueceu a senha?
             </Link>
           </div>
@@ -79,17 +94,8 @@ export default class LoginForm extends Component {
 
           <div>
             <GoogleLoginButton onClick={this.onSocialLogin} />
-            <FacebookLoginButton type="button" onClick={this.onSocialLogin} />
-            <div className="social-login-button">
-              <Link className="columns is-centered">
-                <FontAwesomeIcon
-                  className="column"
-                  icon={["fab", "twitter"]}
-                  style={{ fontSize: "1rem", color: "blue" }}
-                />
-                <span className="column is-2">Entrar com Twitter</span>
-              </Link>
-            </div>
+            <FacebookLoginButton onClick={this.onSocialLogin} />
+            <TwitterLoginButton onClick={this.onSocialLogin} />
           </div>
         </form>
         <div className="register-question level">
@@ -97,7 +103,7 @@ export default class LoginForm extends Component {
             Não possui uma conta?
           </span>
           <Link
-            className="level-item has-text-centered"
+            className="register-question-text level-item has-text-centered has-text-weight-bold"
             to={"account/register"}
           >
             Criar uma conta
