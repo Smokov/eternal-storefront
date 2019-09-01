@@ -1,15 +1,21 @@
 import React, { Component } from "react";
-import Header from "./header";
+import Banner from "./BannerSlider";
+import catalogApi from "../api/catalog";
 
 class Home extends Component {
+  state = {
+    images: []
+  };
+
+  componentDidMount() {
+    this.setState({ images: catalogApi.getBannerImages() });
+  }
+
   render() {
-    const { cart, categories } = this.props;
     return (
       <div>
-        <Header cart={cart} categories={categories} />
-        <div>Banner</div>
+        <Banner images={this.state.images} />
         <div>Products List</div>
-        <div>Footer</div>
       </div>
     );
   }

@@ -17,6 +17,11 @@ body {
   transition: margin 200ms ease-in-out;
 }
 
+.hero-body,
+.section {
+  padding: 1.5rem;
+}
+
 a,
 input,
 button {
@@ -41,6 +46,7 @@ MOBILE
 @import "header.scss";
 @import "login.scss";
 @import "profile.scss";
+@import "footer.scss";
 
 // Import only what you need from Bulma
 /*

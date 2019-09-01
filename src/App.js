@@ -3,6 +3,8 @@ import { Route } from "react-router-dom";
 import "bulma/css/bulma.css";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
+import Header from "./components/header";
+import Footer from "./components/footer";
 import cartApi from "./api/cart";
 import catalogApi from "./api/catalog";
 import "./assets/scss/app.scss";
@@ -38,8 +40,10 @@ const categories = catalogApi.getCategories();
 function App() {
   return (
     <>
+      <Header cart={cart} categories={categories} />
       <Route path="/" exact component={Home} />
       <Route path="/profile" component={Profile} />
+      <Footer />
     </>
   );
 }
