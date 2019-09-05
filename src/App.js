@@ -1,13 +1,13 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import "bulma/css/bulma.css";
+import "./assets/scss/app.scss";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import cartApi from "./api/cart";
 import catalogApi from "./api/catalog";
-import "./assets/scss/app.scss";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
