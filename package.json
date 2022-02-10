@@ -46,7 +46,7 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "nodemon": "^1.19.2",
     "prop-types": "^15.7.2",
     "webpack-dev-middleware": "^3.7.1",
